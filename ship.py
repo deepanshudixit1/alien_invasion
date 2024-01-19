@@ -9,7 +9,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
         
         #load the ship image and its rect
-        self.image = pygame.image.load('Alien-invasion\spaceship.bmp')
+        self.image = pygame.image.load('Alien-invasion\images\spaceship.bmp')
         self.rect = self.image.get_rect()
         
         #start each ship at bottom of the screen
@@ -31,6 +31,11 @@ class Ship:
             self.x -= self.settings.ship_speed
         #update rect object from self.x
         self.rect.x=self.x
+    
+    def centre_ship(self):
+        #centre the ship on the screen
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x=float(self.rect.x)
     
     def blitme(self):
         #draw ship at current location
