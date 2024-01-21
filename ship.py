@@ -1,9 +1,12 @@
 import pygame
 
-class Ship:
+from pygame.sprite import Sprite
+
+class Ship(Sprite):
     #class to manage ship
     def __init__(self , ai_game):
         #initialize the ship and set its starting position.
+        super().__init__()
         self.settings=ai_game.settings
         self.screen = ai_game.screen
         self.screen_rect = ai_game.screen.get_rect()
@@ -20,8 +23,7 @@ class Ship:
         
         self.moving_right = False           #movement flag for right key
         self.moving_left = False            #movement flaf for left key
-       
-        
+         
     def update(self):
         #change the ship's position based on moving_flag
         if self.moving_right and self.rect.right < self.screen_rect.right:
