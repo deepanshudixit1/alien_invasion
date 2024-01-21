@@ -273,13 +273,10 @@ class AlienInvasion:
             self.ship.centre_ship()
             
             #hide the cursor
-            pygame.mouse.set_visible(False)
-            
-            
-        
-            
+            pygame.mouse.set_visible(False)         
             
 if __name__=='__main__':
+    print("First Prototype Done")
     #make game instance and run game.
     ai=AlienInvasion()
     ai.run_game()
